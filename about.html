@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About PawAdopt. Our mission is to connect dog lovers with rescue dogs across India.">
+    <title>About Us - PawAdopt</title>
+    <link rel="stylesheet" href="css/css_style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <span class="logo-icon">🐾</span>
+                <span>PawAdopt</span>
+            </div>
+            
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="adopt.html" class="nav-link">Adopt</a></li>
+                <li><a href="shelters.html" class="nav-link">Shelters</a></li>
+                <li><a href="donate.html" class="nav-link">Donate</a></li>
+                <li><a href="statistics.html" class="nav-link">Statistics</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>About PawAdopt</h1>
+        <p>Connecting adopters with rescue dogs across India</p>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="mission-content">
+                <h2>Our Mission</h2>
+                <p class="mission-statement">At PawAdopt, we believe every dog deserves a loving home. Our mission is to simplify the dog adoption process and connect caring families with rescue dogs in need.</p>
+                
+                <h3>The Problem We're Solving</h3>
+                <ul class="problems-list">
+                    <li>🏢 Many animal shelters lack online visibility</li>
+                    <li>🔍 Adoption processes are scattered and complex</li>
+                    <li>📍 People don't know where to find adoptable dogs near them</li>
+                    <li>💡 Limited awareness about indie dog adoption</li>
+                </ul>
+
+                <h3>Our Solution</h3>
+                <p>PawAdopt is a centralized platform that brings together adoptable dogs, shelters, and prospective adopters. We make it easy to:</p>
+                <ul class="solutions-list">
+                    <li>✓ Browse adoptable dogs by city</li>
+                    <li>✓ Connect directly with shelters</li>
+                    <li>✓ Support rescue organizations through donations</li>
+                    <li>✓ Learn about responsible dog adoption</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <h2>Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">❤️</div>
+                    <h3>Compassion</h3>
+                    <p>We care deeply about the welfare of every dog</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Collaboration</h3>
+                    <p>We work together with shelters and adopters</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌍</div>
+                    <h3>Impact</h3>
+                    <p>We measure success by lives changed</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💪</div>
+                    <h3>Empowerment</h3>
+                    <p>We empower shelters to reach more adopters</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <h2>Founder & Lead Developer</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-avatar"></div>
+                    <h3>Aaditya Parmar</h3>
+                    <p class="team-role">Im a </p>
+                    <p class="team-bio">Passionate dog lover with 5 years of experience in animal welfare</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>How do I adopt a dog through PawAdopt?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Simply browse dogs by city, find one you like, click "Start Adoption Process," fill out the application form, and the shelter will contact you within 24-48 hours to discuss next steps.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>Are there any adoption fees?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Adoption fees vary by shelter. Some shelters charge a nominal fee to help cover medical care and shelter expenses, while others may not charge at all. The shelter will provide details during the adoption process.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>Can I adopt a dog from a different city?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! You can browse dogs from any city on our platform. However, we recommend starting with dogs in your city for easier coordination and to support local shelters.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>What if I'm a first-time dog owner?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Many dogs are perfect for first-time owners! Check out our blog section for tips on dog care, training, and preparation. Our shelters also provide guidance to ensure a successful adoption.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>How can I help if I can't adopt?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can donate through our platform to support shelter operations, food, medical care, and vaccination. You can also share our platform with others to help more dogs find homes!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>Are the dogs vaccinated and healthy?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most dogs on our platform are vaccinated and receive medical checkups. Each dog's profile shows their health status. We encourage all adopters to have a vet checkup before and after adoption.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- Contact Section -->
+<section class="contact-section">
+    <div class="container">
+        <h2 id="Contact12">Get in Touch</h2>
+        <div class="contact-content">
+            <div class="contact-form">
+                <h3>Send us a Message</h3>
+                <form id="contactFormElement">
+                    <div class="form-group">
+                        <label for="contactName">Name</label>
+                        <input type="text" id="contactName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Email</label>
+                        <input type="email" id="contactEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactSubject">Subject</label>
+                        <input type="text" id="contactSubject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Message</label>
+                        <textarea id="contactMessage" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <div class="info-item">
+                    <h4>📧 Email</h4>
+                    <p>hello@pawadopt.in</p>
+                </div>
+                <div class="info-item">
+                    <h4>📱 Phone</h4>
+                    <p>+91 XXXXXXXXXX</p>
+                </div>
+                <div class="info-item">
+                    <h4>📍 Location</h4>
+                    <p>India</p>
+                </div>
+                <div class="info-item">
+                    <h4>🌐 Social Media</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="https://www.instagram.com/shelter.sync/" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="adopt.html">Adopt</a></li>
+                    <li><a href="shelters.html">Shelters</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: syncshelter@gmail.com</p>
+                <p>Phone: +91 XXXXXXXXXX</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="https://www.instagram.com/shelter.sync/" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">𝕏</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ShelterSync. All rights reserved. Made with ❤️ for dogs.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/js_about.js"></script>
+    <script src="js/js_script.js"></script>
+</body>
+</html>

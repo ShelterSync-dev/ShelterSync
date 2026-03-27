@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Support dog shelters across India. Your donation helps rescue and care for dogs in need.">
+    <title>Donate - PawAdopt</title>
+    <link rel="stylesheet" href="css/css_style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <span class="logo-icon">🐾</span>
+                <span>PawAdopt</span>
+            </div>
+            
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="adopt.html" class="nav-link">Adopt</a></li>
+                <li><a href="shelters.html" class="nav-link">Shelters</a></li>
+                <li><a href="donate.html" class="nav-link">Donate</a></li>
+                <li><a href="statistics.html" class="nav-link">Statistics</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Support Our Mission</h1>
+        <p>Your donation helps rescue, care for, and rehome dogs in need</p>
+    </section>
+
+    <!-- Why Donate Section -->
+    <section class="donate-section">
+        <div class="container">
+            <h2>Why Your Donation Matters</h2>
+            <p class="section-subtitle">Every rupee goes directly to helping dogs in need. Here's how your contribution makes a difference:</p>
+            
+            <div class="donation-costs">
+                <div class="cost-card">
+                    <div class="cost-icon">🍖</div>
+                    <h3>Food for One Dog</h3>
+                    <p class="cost-amount">₹1,500/month</p>
+                    <p>Nutritious meals to keep rescue dogs healthy and strong</p>
+                </div>
+                <div class="cost-card">
+                    <div class="cost-icon">💉</div>
+                    <h3>Vaccination</h3>
+                    <p class="cost-amount">₹800</p>
+                    <p>Complete vaccination protection against common diseases</p>
+                </div>
+                <div class="cost-card">
+                    <div class="cost-icon">🏥</div>
+                    <h3>Sterilization</h3>
+                    <p class="cost-amount">₹2,000</p>
+                    <p>Medical procedure to prevent unwanted litters</p>
+                </div>
+                <div class="cost-card">
+                    <div class="cost-icon">🛏️</div>
+                    <h3>Shelter Care</h3>
+                    <p class="cost-amount">₹5,000/month</p>
+                    <p>Housing, bedding, and daily care facilities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact-section">
+        <div class="container">
+            <h2>Your Impact</h2>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <h4>₹500</h4>
+                    <p>Feeds a dog for a week</p>
+                </div>
+                <div class="impact-card">
+                    <h4>₹2,000</h4>
+                    <p>Complete vaccination for one dog</p>
+                </div>
+                <div class="impact-card">
+                    <h4>₹5,000</h4>
+                    <p>Sterilization + vaccination combo</p>
+                </div>
+                <div class="impact-card">
+                    <h4>₹10,000</h4>
+                    <p>Monthly care for one dog</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Options -->
+    <section class="donation-options">
+        <div class="container">
+            <h2>Choose Your Donation Method</h2>
+            
+            <div class="donation-methods">
+                <div class="method-card">
+                    <h3>💳 UPI Payment</h3>
+                    <p>Fast and secure donation via UPI</p>
+                    <button class="btn btn-primary" onclick="handleDonation('UPI')">Donate via UPI</button>
+                </div>
+                <div class="method-card">
+                    <h3>🏦 Razorpay</h3>
+                    <p>Credit card, debit card, or net banking</p>
+                    <button class="btn btn-primary" onclick="handleDonation('Razorpay')">Donate via Razorpay</button>
+                </div>
+                <div class="method-card">
+                    <h3>💰 Bank Transfer</h3>
+                    <p>Direct bank transfer to our account</p>
+                    <button class="btn btn-secondary" onclick="showBankDetails()">Bank Details</button>
+                </div>
+            </div>
+
+            <div id="bankDetails" class="bank-details" style="display: none;">
+                <h4>Bank Transfer Details</h4>
+                <p><strong>Account Holder:</strong> PawAdopt India</p>
+                <p><strong>Account Number:</strong> 123456789012345</p>
+                <p><strong>IFSC Code:</strong> SBIN0001234</p>
+                <p><strong>Bank Name:</strong> State Bank of India</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <h2>Stay Updated</h2>
+            <p>Get updates on dogs we've helped and impact stories</p>
+            <form class="newsletter-form" onsubmit="handleNewsletterSignup(event)">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="adopt.html">Adopt</a></li>
+                    <li><a href="shelters.html">Shelters</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: syncshelter@gmail.com</p>
+                <p>Phone: +91 XXXXXXXXXX</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="https://www.instagram.com/shelter.sync/" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">𝕏</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ShelterSync. All rights reserved. Made with ❤️ for dogs.</p>
+        </div>
+    </footer>
+
+    <script src="js/js_script.js"></script>
+</body>
+</html>

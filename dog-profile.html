@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Full profile of an adoptable dog.">
+    <title>Dog Profile - ShelterSync</title>
+    <link rel="stylesheet" href="css/css_style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <span class="logo-icon">🐾</span>
+                <span>ShelterSync</span>
+            </div>
+            
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="adopt.html" class="nav-link">Adopt</a></li>
+                <li><a href="shelters.html" class="nav-link">Shelters</a></li>
+                <li><a href="donate.html" class="nav-link">Donate</a></li>
+                <li><a href="statistics.html" class="nav-link">Statistics</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Dog Profile Section -->
+    <section class="dog-profile-section">
+        <div class="container">
+            <!-- Loading State -->
+            <div id="loadingState" style="text-align: center; padding: 3rem;">
+                <p style="font-size: 1.5rem;">Loading dog profile... 🐕</p>
+            </div>
+
+            <!-- Profile Content (Hidden until loaded) -->
+            <div id="profileContent" style="display: none;">
+                
+                <!-- Back Button -->
+                <div style="margin-bottom: 2rem;">
+                    <a href="adopt.html" class="btn btn-secondary">← Back to Dogs</a>
+                </div>
+
+                <!-- Profile Header -->
+                <div class="profile-header">
+                    <div class="profile-image">
+                        <img id="dogImage" src="" alt="Dog" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px;">
+                    </div>
+
+                    <div class="profile-info">
+                        <h1 id="dogName">Dog Name</h1>
+                        
+                        <div class="profile-tags">
+                            <span class="tag" id="dogAge">Age</span>
+                            <span class="tag" id="dogGender">Gender</span>
+                            <span class="tag" id="dogBreed">Breed</span>
+                        </div>
+
+                        <div class="profile-location">
+                            <p>📍 <strong id="dogCity">City</strong></p>
+                            <p>🏢 <strong id="dogShelter">Shelter</strong></p>
+                        </div>
+
+                        <div style="margin-top: 2rem;">
+                            <button class="btn btn-primary" onclick="scrollToSection('adoptionSection')" style="width: 100%; margin-bottom: 0.5rem;">Start Adoption Process</button>
+                            <a href="shelters.html" class="btn btn-secondary" style="width: 100%; display: block; text-align: center;">Visit Shelter</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Section -->
+                <section class="profile-section">
+                    <h2>About</h2>
+                    <p id="dogDescription" style="line-height: 1.8; font-size: 1.1rem;">Description goes here...</p>
+                </section>
+
+                <!-- Health Status Section -->
+                <section class="profile-section">
+                    <h2>Health Status</h2>
+                    <div class="health-grid">
+                        <div class="health-item">
+                            <h4>Vaccination Status</h4>
+                            <p id="vaccinationStatus">Status</p>
+                        </div>
+                        <div class="health-item">
+                            <h4>Neutered/Spayed</h4>
+                            <p id="neuteredStatus">Status</p>
+                        </div>
+                        <div class="health-item">
+                            <h4>Microchipped</h4>
+                            <p id="microchipStatus">Status</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Additional Info Section -->
+                <section class="profile-section">
+                    <h2>Additional Information</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <h4>Size</h4>
+                            <p id="dogSize">Unknown</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>Color</h4>
+                            <p id="dogColor">Unknown</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>Weight</h4>
+                            <p id="dogWeight">Unknown</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>Adoption Fee</h4>
+                            <p id="adoptionFee">Unknown</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Personality Traits Section -->
+                <section class="profile-section">
+                    <h2>Personality & Behavior</h2>
+                    <div class="traits-grid">
+                        <div class="trait-card">
+                            <span class="trait-emoji">🎾</span>
+                            <p id="trait1">Playful</p>
+                        </div>
+                        <div class="trait-card">
+                            <span class="trait-emoji">👨‍👩‍👧‍👦</span>
+                            <p id="trait2">Family Friendly</p>
+                        </div>
+                        <div class="trait-card">
+                            <span class="trait-emoji">🐕</span>
+                            <p id="trait3">Good with Dogs</p>
+                        </div>
+                        <div class="trait-card">
+                            <span class="trait-emoji">🐱</span>
+                            <p id="trait4">Good with Cats</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Adoption Section -->
+                <section class="profile-section" id="adoptionSection">
+                    <h2>Ready to Adopt?</h2>
+                    <div class="adoption-cta" style="background: linear-gradient(135deg, #FF914D 0%, #FF7F2C 100%); color: white; padding: 2rem; border-radius: 12px; text-align: center;">
+                        <h3 style="color: white; margin-bottom: 1rem;">Start the adoption process today!</h3>
+                        <p style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.9);">Fill out our adoption application and get in touch with the shelter.</p>
+                        <button class="btn" style="background: white; color: #FF914D; font-weight: 700;" onclick="openAdoptionForm()">Submit Adoption Application</button>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Error State -->
+            <div id="errorState" style="display: none; text-align: center; padding: 3rem;">
+                <p style="font-size: 1.5rem; color: red;">❌ Could not load dog profile</p>
+                <p><a href="adopt.html" class="btn btn-secondary">Back to Dogs</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Adoption Form Modal -->
+    <div id="adoptionFormModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div id="adoptionFormBody">
+                <h2>Start Your Adoption Journey</h2>
+                <p style="color: #666; margin-bottom: 1.5rem;">Fill out this form to start the adoption process with the shelter</p>
+                
+                <form id="adoptionForm" onsubmit="handleAdoptionFormSubmit(event)" style="background: var(--background-color); padding: 1.5rem; border-radius: 8px;">
+                    <div class="form-group">
+                        <label for="adopterName">Your Name *</label>
+                        <input type="text" id="adopterName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adopterEmail">Email Address *</label>
+                        <input type="email" id="adopterEmail" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adopterPhone">Phone Number *</label>
+                        <input type="tel" id="adopterPhone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adopterAddress">Address *</label>
+                        <input type="text" id="adopterAddress" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adoptionReason">Why do you want to adopt? *</label>
+                        <textarea id="adoptionReason" rows="3" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="familyMembers">Number of Family Members *</label>
+                        <input type="number" id="familyMembers" min="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="otherPets">Do you have other pets?</label>
+                        <select id="otherPets">
+                            <option>No</option>
+                            <option>Yes - Dogs</option>
+                            <option>Yes - Cats</option>
+                            <option>Yes - Both</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience">Dog ownership experience *</label>
+                        <select id="experience" required>
+                            <option>First time</option>
+                            <option>Some experience</option>
+                            <option>Experienced owner</option>
+                        </select>
+                    </div>
+
+                    <input type="hidden" id="selectedDogId">
+                    <input type="hidden" id="selectedDogName">
+                    <input type="hidden" id="selectedShelter">
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="adopt.html">Adopt</a></li>
+                    <li><a href="shelters.html">Shelters</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: syncshelter@gmail.com</p>
+                <p>Phone: +91 XXXXXXXXXX</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="https://www.instagram.com/shelter.sync/" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">𝕏</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ShelterSync. All rights reserved. Made with ❤️ for dogs.</p>
+        </div>
+    </footer>
+
+    <script src="js/js_data.js"></script>
+    <script type="module" src="js/js_dog_profile.js"></script>
+    <script src="js/js_script.js"></script>
+</body>
+</html>

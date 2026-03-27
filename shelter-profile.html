@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Full profile of a shelter.">
+    <title>Shelter Profile - ShelterSync</title>
+    <link rel="stylesheet" href="css/css_style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <span class="logo-icon">🐾</span>
+                <span>ShelterSync</span>
+            </div>
+            
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="adopt.html" class="nav-link">Adopt</a></li>
+                <li><a href="shelters.html" class="nav-link">Shelters</a></li>
+                <li><a href="donate.html" class="nav-link">Donate</a></li>
+                <li><a href="statistics.html" class="nav-link">Statistics</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Shelter Profile Section -->
+    <section class="shelter-profile-section">
+        <div class="container">
+            <!-- Loading State -->
+            <div id="loadingState" style="text-align: center; padding: 3rem;">
+                <p style="font-size: 1.5rem;">Loading shelter profile... 🏢</p>
+            </div>
+
+            <!-- Profile Content (Hidden until loaded) -->
+            <div id="profileContent" style="display: none;">
+                
+                <!-- Back Button -->
+                <div style="margin-bottom: 2rem;">
+                    <a href="shelters.html" class="btn btn-secondary">← Back to Shelters</a>
+                </div>
+
+                <!-- Profile Header -->
+                <div class="profile-header">
+                    <div class="profile-image">
+                        <img id="shelterImage" src="" alt="Shelter" style="width: 100%; height: 400px; object-fit: cover; border-radius: 12px;">
+                    </div>
+
+                    <div class="profile-info">
+                        <h1 id="shelterName">Shelter Name</h1>
+                        
+                        <div class="profile-location">
+                            <p>📍 <strong id="shelterCity">City</strong></p>
+                            <p>🐕 <strong id="dogsAvailable">Dogs</strong> available for adoption</p>
+                        </div>
+
+                        <div style="margin-top: 2rem;">
+                            <a href="#contactSection" class="btn btn-primary" style="width: 100%; display: block; text-align: center; margin-bottom: 0.5rem;">Contact Shelter</a>
+                            <a href="adopt.html" class="btn btn-secondary" style="width: 100%; display: block; text-align: center;">Browse Dogs</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Section -->
+                <section class="profile-section">
+                    <h2>About This Shelter</h2>
+                    <p id="shelterDescription" style="line-height: 1.8; font-size: 1.1rem;">Description goes here...</p>
+                </section>
+
+                <!-- Contact Information Section -->
+                <section class="profile-section" id="contactSection">
+                    <h2>Contact Information</h2>
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <h4>📧 Email</h4>
+                            <p><a href="mailto:" id="shelterEmail">email@shelter.com</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>📱 Phone</h4>
+                            <p><a href="tel:" id="shelterPhone">+91 XXXXXXXXXX</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>🌐 Website</h4>
+                            <p><a href="#" id="shelterWebsite" target="_blank">Visit Website</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>📍 Address</h4>
+                            <p id="shelterAddress">Address goes here</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Services Section -->
+                <section class="profile-section">
+                    <h2>Services & Features</h2>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <span class="service-emoji">✅</span>
+                            <p>Adoption Process</p>
+                        </div>
+                        <div class="service-card">
+                            <span class="service-emoji">💉</span>
+                            <p>Health Checks</p>
+                        </div>
+                        <div class="service-card">
+                            <span class="service-emoji">📋</span>
+                            <p>Paperwork</p>
+                        </div>
+                        <div class="service-card">
+                            <span class="service-emoji">💬</span>
+                            <p>Consultation</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Available Dogs Section 
+                <section class="profile-section">
+                    <h2>Available Dogs</h2>
+                    <p>This shelter has <strong id="dogsCount">0</strong> dogs available for adoption.</p>
+                    <a href="adopt.html" class="btn btn-primary" style="margin-top: 1rem;">View All Dogs</a>
+                </section> -->
+
+                <!-- CTA Section -->
+                <section class="profile-section" style="background: linear-gradient(135deg, #FF914D 0%, #FF7F2C 100%); color: white; padding: 2rem; border-radius: 12px; text-align: center;">
+                    <h2 style="color: white;">Want to Help?</h2>
+                    <p style="margin-bottom: 1.5rem; color: rgba(255,255,255,0.9);">Support this shelter by donating or volunteering.</p>
+                    <a href="donate.html" class="btn" style="background: white; color: #FF914D; font-weight: 700;">Donate Now</a>
+                </section>
+
+            </div>
+
+            <!-- Error State -->
+            <div id="errorState" style="display: none; text-align: center; padding: 3rem;">
+                <p style="font-size: 1.5rem; color: red;">❌ Could not load shelter profile</p>
+                <p><a href="shelters.html" class="btn btn-secondary">Back to Shelters</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="adopt.html">Adopt</a></li>
+                    <li><a href="shelters.html">Shelters</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: syncshelter@gmail.com</p>
+                <p>Phone: +91 XXXXXXXXXX</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="https://www.instagram.com/shelter.sync/" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">𝕏</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ShelterSync. All rights reserved. Made with ❤️ for dogs.</p>
+        </div>
+    </footer>
+
+    <script src="js/js_data.js"></script>
+    <script type="module" src="js/js_shelter_profile.js"></script>
+    <script src="js/js_script.js"></script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse adoptable dogs from shelters across India. Filter by city, breed, age, and more.">
+    <title>Adopt a Dog - ShelterSync</title>
+    <link rel="stylesheet" href="css/css_style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <span class="logo-icon">🐾</span>
+                <span>ShelterSync</span>
+            </div>
+            
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="adopt.html" class="nav-link">Adopt</a></li>
+                <li><a href="shelters.html" class="nav-link">Shelters</a></li>
+                <li><a href="donate.html" class="nav-link">Donate</a></li>
+                <li><a href="statistics.html" class="nav-link">Statistics</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Find Your Perfect Companion</h1>
+        <p>Discover adoptable dogs from shelters near you</p>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="citySelect">Select City *</label>
+                    <select id="citySelect" required>
+                        <option value="">-- Choose a City --</option>
+                        <option value="Ahmedabad">Ahmedabad</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Pune">Pune</option>
+                    </select>
+                </div>
+
+                <div class="filter-group" id="breedFilterGroup" style="display: none;">
+                    <label for="breedSelect">Breed (Optional)</label>
+                    <select id="breedSelect">
+                        <option value="">-- All Breeds --</option>
+                    </select>
+                </div>
+
+                <div class="filter-group" id="genderFilterGroup" style="display: none;">
+                    <label for="genderSelect">Gender (Optional)</label>
+                    <select id="genderSelect">
+                        <option value="">-- All Genders --</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+
+                <div class="filter-group" id="ageFilterGroup" style="display: none;">
+                    <label for="ageSelect">Age (Optional)</label>
+                    <select id="ageSelect">
+                        <option value="">-- All Ages --</option>
+                        <option value="Puppy">Puppy (0-1 year)</option>
+                        <option value="Young">Young (1-3 years)</option>
+                        <option value="Adult">Adult (3+ years)</option>
+                    </select>
+                </div>
+
+                <button id="resetFilters" class="btn btn-secondary" style="display: none;">Reset Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dogs Grid -->
+    <section class="dogs-section">
+        <div class="container">
+            <div id="cityNotSelected" class="city-prompt">
+                <p>👆 Please select a city above to see available dogs</p>
+            </div>
+            <div class="dogs-grid" id="dogsContainer" style="display: none;">
+                <!-- Dogs loaded by JavaScript -->
+            </div>
+            <div id="noDogsMessage" class="no-results" style="display: none;">
+                <p>No dogs found matching your criteria. Try adjusting your filters.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="adopt.html">Adopt</a></li>
+                    <li><a href="shelters.html">Shelters</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: syncshelter@gmail.com</p>
+                <p>Phone: +91 XXXXXXXXXX</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="https://www.instagram.com/shelter.sync/" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">𝕏</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ShelterSync. All rights reserved. Made with ❤️ for dogs.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for Dog Details -->
+    <div id="dogModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div id="modalBody">
+                <!-- Dog details loaded by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Adoption Application Form Modal -->
+    <div id="adoptionFormModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div id="adoptionFormBody">
+                <h2>Start Your Adoption Journey</h2>
+                <p style="color: #666; margin-bottom: 1.5rem;">Fill out this form to start the adoption process with the shelter</p>
+                
+                <form id="adoptionForm" onsubmit="handleAdoptionFormSubmit(event)" style="background: var(--background-color); padding: 1.5rem; border-radius: 8px;">
+                    <div class="form-group">
+                        <label for="adopterName">Your Name *</label>
+                        <input type="text" id="adopterName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adopterEmail">Email Address *</label>
+                        <input type="email" id="adopterEmail" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adopterPhone">Phone Number *</label>
+                        <input type="tel" id="adopterPhone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adopterAddress">Address *</label>
+                        <input type="text" id="adopterAddress" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adoptionReason">Why do you want to adopt? *</label>
+                        <textarea id="adoptionReason" rows="3" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="familyMembers">Number of Family Members *</label>
+                        <input type="number" id="familyMembers" min="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="otherPets">Do you have other pets?</label>
+                        <select id="otherPets">
+                            <option>No</option>
+                            <option>Yes - Dogs</option>
+                            <option>Yes - Cats</option>
+                            <option>Yes - Both</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience">Dog ownership experience *</label>
+                        <select id="experience" required>
+                            <option>First time</option>
+                            <option>Some experience</option>
+                            <option>Experienced owner</option>
+                        </select>
+                    </div>
+
+                    <input type="hidden" id="selectedDogId">
+                    <input type="hidden" id="selectedDogName">
+                    <input type="hidden" id="selectedShelter">
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/js_adopt.js"></script>
+
+
+
+    <script src="js/js_data.js"></script>
+    <script type="module" src="js/js_adopt.js"></script>
+    <script src="js/js_script.js"></script>
+</body>
+</html>
